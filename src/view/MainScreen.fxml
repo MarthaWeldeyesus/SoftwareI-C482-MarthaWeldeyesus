@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="722.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+   <children>
+          <Label layoutX="29.0" layoutY="25.0" style="-fx-font-weight: bold; -fx-font-size: 16;" text="Inventory Management System" />
+      <Pane layoutX="21.0" layoutY="62.0" prefHeight="217.0" prefWidth="388.0" style="-fx-border-radius: 10; -fx-border-color: gray;">
+         <children>
+            <Label layoutX="27.0" layoutY="15.0" style="-fx-font-weight: bold;" text="Parts" />
+            <TextField fx:id="partSearchField" layoutX="169.0" layoutY="11.0" onKeyPressed="#RefresheSearchPart" promptText="Searche by Part ID or Name" />
+            <TableView fx:id="partTableView" layoutX="18.0" layoutY="40.0" prefHeight="130.0" prefWidth="362.0">
+              <columns>
+                  <TableColumn fx:id="partIdColumn" prefWidth="69.0" text="Part ID" />
+                  <TableColumn fx:id="partNameColumn" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="partInventoryColumn" prefWidth="58.0" text="Inventory Level " />
+                  <TableColumn fx:id="partPriceColumn" prefWidth="158.0" text="Price/Cost Per Unit " />
+              </columns>
+            </TableView>
+            <Button layoutX="300.0" layoutY="178.0" mnemonicParsing="false" onAction="#partDeleteButton" text="Delete" />
+            <Button layoutX="231.0" layoutY="178.0" mnemonicParsing="false" onAction="#partModifyButton" text="Modify" />
+            <Button layoutX="176.0" layoutY="178.0" mnemonicParsing="false" onAction="#partAddButton" text="Add" />
+            <Button layoutX="318.0" layoutY="11.0" mnemonicParsing="false" onAction="#partSearchButton" text="Search" />
+         </children></Pane>
+      <Pane layoutX="426.0" layoutY="62.0" prefHeight="217.0" prefWidth="388.0" style="-fx-border-radius: 10; -fx-border-color: gray;">
+         <children>
+            <Label layoutX="27.0" layoutY="15.0" style="-fx-font-weight: bold;" text="Products" />
+            <TextField fx:id="productSearchField" layoutX="172.0" layoutY="11.0" onKeyPressed="#RefresheSearchProduct" promptText="Searche by Product ID or Name" />
+            <TableView fx:id="productTableView" layoutX="18.0" layoutY="40.0" prefHeight="130.0" prefWidth="362.0">
+               <columns>
+                  <TableColumn fx:id="productIdColumn" prefWidth="69.0" text="Product ID" />
+                  <TableColumn fx:id="productNameColumn" prefWidth="75.0" text="Product Name" />
+                  <TableColumn fx:id="productInventoryColumn" prefWidth="58.0" text="Inventory Level " />
+                  <TableColumn fx:id="productPriceColumn" prefWidth="158.0" text="Price/Cost Per Unit " />
+               </columns>
+            </TableView>
+            <Button layoutX="309.0" layoutY="178.0" mnemonicParsing="false" onAction="#productDeleteButton" text="Delete" />
+            <Button layoutX="233.0" layoutY="178.0" mnemonicParsing="false" onAction="#productModifyButton" text="Modify" />
+            <Button layoutX="172.0" layoutY="178.0" mnemonicParsing="false" onAction="#productAddButton" text="Add" />
+            <Button layoutX="321.0" layoutY="11.0" mnemonicParsing="false" onAction="#productSearchButton" text="Search" />
+         </children>
+      </Pane>
+      <Button layoutX="570.0" layoutY="314.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="25.0" prefWidth="50.0" text="Exit" />
+   
+   </children>
+</AnchorPane>
